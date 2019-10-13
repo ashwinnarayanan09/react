@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Hello World</title>
+  <script src="js/react.js"></script>
+  <script src="js/react-dom.js"></script>
+  <script src="js/babel.js"></script>
+</head>
+
+<body>
+<div id="root"></div>
+<script type="text/babel">
+
+  function NumberList(props){
+    const numbers = props.params;
+    const listValues = numbers.map((value)=><li>{value}</li>);
+
+    return (
+      <ul>
+        {listValues}
+      </ul>
+    );
+  }
+
+  const values = [10,50,40,90,100];
+
+  ReactDOM.render(<NumberList params={values} />,document.getElementById('root'));
+
+</script>
+</body>
+
+</html>

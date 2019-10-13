@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Hello World</title>
+  <script src="js/react.js"></script>
+  <script src="js/react-dom.js"></script>
+  <script src="js/babel.js"></script>
+</head>
+
+<body>
+<div id="root"></div>
+<script type="text/babel">
+
+  function showtime(){
+
+    const element = (
+      <div class="">
+        <h1>Have a nice day!</h1>
+        <h2>Now its {new Date().toString()}</h2>
+      </div>
+
+    );
+    ReactDOM.render(element,document.getElementById('root'));
+  }
+
+setInterval(showtime,500);
+</script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Hello World</title>
+  <script src="js/react.js"></script>
+  <script src="js/react-dom.js"></script>
+  <script src="js/babel.js"></script>
+</head>
+
+<body>
+<div id="root"></div>
+<script type="text/babel">
+
+class Time extends React.Component{
+
+  constructor(value){
+    super(value);
+    this.state = {date:new Date()};
+  }
+
+  render(){
+    return (
+      <div class="">
+        <h2>This is {this.state.date.toString()}</h2>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Time/>,document.getElementById('root'));
+
+</script>
+</body>
+
+</html>

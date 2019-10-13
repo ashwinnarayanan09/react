@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Hello World</title>
+  <script src="js/react.js"></script>
+  <script src="js/react-dom.js"></script>
+  <script src="js/babel.js"></script>
+</head>
+
+<body>
+<div id="root"></div>
+<script type="text/babel">
+
+class NameForm extends React.Component{
+
+constructor(props){
+  super(props);
+  this.state = {value:''};
+  this.processChange = this.processChange.bind(this);
+  this.processSubmit = this.processSubmit.bind(this);
+}
+
+
+processChange(event){
+  this.setState({value:event.target.value});
+}
+
+processSubmit(event){
+  alert('A person name was submitted:'+this.state.value);
+  event.preventDefault();
+}
+
+  render(){
+    return (
+      <form onSubmit={this.processSubmit}>
+        <label for="">Person Name:<input type="text" onChange={this.processChange} value={this.state.value}/>
+        </label>
+        <input type="submit" value="Submit"/>
+      </form>
+    );
+  }
+}
+
+ReactDOM.render(<NameForm/>,document.getElementById('root'));
+
+</script>
+</body>
+
+</html>
